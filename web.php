@@ -19,6 +19,7 @@ use App\Http\Controllers\UserController;
 
         Route::get('/', [UserController::class,'home'])->name('home');
         Route::get('/create', [UserController::class,'create']);
+        Route::get('/details', [UserController::class,'details']);
         Route::post('/saved', [UserController::class, 'saved'])->name('saved');
     // });
 
