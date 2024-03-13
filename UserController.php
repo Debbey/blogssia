@@ -16,19 +16,25 @@ class UserController extends Controller
         return view('create');
     }
 
-    public function saved(Request $request){
-        $billin = new Billin();
-        $billin->firstN = $request->firstN;
-        $billin->lastN = $request->lastN;
-        $billin->gender = $request->gender;
-        $billin->language = $request->language;
-        $billin->email = $request->email;
-        $billin->address = $request->address;
-        $billin->state = $request->state;
-        $billin->zip = $request->zip;
-        $billin->cardtype = $request->cardtype;
-        $billin->save();
-        return redirect()->route('home');
-    }
+     public function details(){
+            $data['billin'] = Billin::all();
+            return view('details', $data);
+        }
+
+   public function saved(Request $request)
+      {
+          $billin = new Billin();
+          $billin->firstN = $request->firstN;
+          $billin->lastN = $request->lastN;
+          $billin->gender = $request->gender;
+          $billin->language = $request->language;
+          $billin->email = $request->email;
+          $billin->address = $request->address;
+          $billin->state = $request->state;
+          $billin->zip = $request->zip;
+          $billin->cardtype = $request->cardtype;
+          $billin->save();
+          return redirect()->route('home');
+      }
 
 }

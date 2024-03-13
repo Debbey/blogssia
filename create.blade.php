@@ -54,7 +54,7 @@
 
         <div>
             <label>ZIP: </label>
-            <input type="number" name="address" reqired>
+            <input type="number" name="zip" reqired>
         </div>
 
         <div>
